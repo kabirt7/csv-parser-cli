@@ -22,10 +22,10 @@
 ## 7/11/24
 * Initialised git repository
 * Planned out structure of the Java project
-- Person Class to contain information for each entry
-- Comparator class that uses the Comparator Interface for sorting
-- CSV Parser class that uses the Buffered Reader import to analyse the CSV file
-- A resources folder where the CSV file in contained
+ - Person Class to contain information for each entry
+ - Comparator class that uses the Comparator Interface for sorting
+ - CSV Parser class that uses the Buffered Reader import to analyse the CSV file
+ - A resources folder where the CSV file in contained
 
 * A Test source directory that contains a package with tests
 
