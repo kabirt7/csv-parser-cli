@@ -35,4 +35,4 @@ CSVParser<T>
 ```
 * I'm going to build the project with Maven so it can be easily built and deployed (I want to use some JUnit 5 testing libraries)
 * Need to add some build notes to the README when finished
-* I think I'm going to include a build argument for the path so that it different lists of people can be analaysed
+* I think I'm going to include a CLI argument for the file path so that different lists of people can be analaysed
