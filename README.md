@@ -28,3 +28,11 @@ Initialised git repository and planned out structure of the Java project:
 
 - A Test source directory that contains a package with tests
 
+## 8/11/24
+* So I've been reflecting on my initial thoughts, and I want to use generics so that any object (not just the Person object) can be analysed from the CSV Parser i.e.
+```java
+CSVParser<T>
+```
+* I'm going to build the project with Maven so it can be easily built and deployed (I want to use some JUnit 5 testing libraries)
+* Need to add some build notes to the README when finished
+* I think I'm going to include a build argument for the path so that it different lists of people can be analaysed
