@@ -1,4 +1,4 @@
-# CSVParser-CLI
+# csv-parser-cli
 
 ## MVP
 
