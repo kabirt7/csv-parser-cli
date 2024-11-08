@@ -42,14 +42,7 @@ Achieved:
 * I’ve fleshed out my CSVParser (and test) class as well and my Record Class
 * To allow for my CSVParser class to be used generically, I needed to pass in a constructor from the Object that’s being returned (in this case the Record class)
 ```
-public static Constructor<Record> getConstructor() {
-        try {
-            return Record.class.getConstructor(
-                String.class, String.class, LocalDate.class, Integer.class, Integer.class, String.class);
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException("Required constructor not found", e);
-        }
-    }
+public <T> List<T> parseFile(String pathToFile, Constructor<T> constructor){...}
 ```
 * I also needed to add a method that types the incoming fields according to the specified types on the Object’s constructor.
 ```
