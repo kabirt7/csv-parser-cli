@@ -33,6 +33,39 @@ Initialised git repository and planned out structure of the Java project:
 ```java
 CSVParser<T>
 ```
+Planning:
 * I'm going to build the project with Maven so it can be easily built and deployed (I want to use some JUnit 5 testing libraries)
 * Need to add some build notes to the README when finished
 * I think I'm going to include a CLI argument for the file path so that different lists of people can be analaysed
+
+Achieved:
+* I’ve fleshed out my CSVParser (and test) class as well and my Record Class
+* To allow for my CSVParser class to be used generically, I needed to pass in a constructor from the Object that’s being returned (in this case the Record class)
+```
+public static Constructor<Record> getConstructor() {
+        try {
+            return Record.class.getConstructor(
+                String.class, String.class, LocalDate.class, Integer.class, Integer.class, String.class);
+        } catch (NoSuchMethodException e) {
+            throw new RuntimeException("Required constructor not found", e);
+        }
+    }
+```
+* I also needed to add a method that types the incoming fields according to the specified types on the Object’s constructor.
+```
+private Object[] convertFields(String[] fields, Class<?>[] parameterTypes) {
+        Object[] params = new Object[fields.length];
+
+        for (int i = 0; i < fields.length; i++) {
+            if (parameterTypes[i] == String.class) {
+                params[i] = fields[i];
+            } else if (parameterTypes[i] == Integer.class) {
+                params[i] = Integer.parseInt(fields[i]);
+            } else if (parameterTypes[i] == LocalDate.class) {
+                params[i] = LocalDate.parse(fields[i]);
+            }
+        }
+        return params;
+    }
+```
+* I’ve also gone ahead and added my first test for the CSVParser. The test class creates a sample CSV including an invalid entry which is then subsequently tested (more to come)…
