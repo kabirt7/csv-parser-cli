@@ -17,7 +17,7 @@
 * Logging and error reporting
 * Ease of build and deployment
 
-# Log
+## Log
 
 ## 7/11/24
 Initialised git repository and planned out structure of the Java project:
