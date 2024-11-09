@@ -27,8 +27,8 @@ public class CSVParser {
 			 String[] fields = line.split(",");
 			 
 			 try {
-				 Object[] params = convertFields(fields, constructor.getParameterTypes());
-	             T record = constructor.newInstance(params);
+				 Object[] typedFields = typeFields(fields, constructor.getParameterTypes());
+	             T record = constructor.newInstance(typedFields);
 	             records.add(record);
                  
              } catch (Exception e) {
@@ -43,18 +43,18 @@ public class CSVParser {
 		return records;
 	 }
 	
-	private Object[] convertFields(String[] fields, Class<?>[] parameterTypes) {
-        Object[] params = new Object[fields.length];
+	private Object[] typeFields(String[] fields, Class<?>[] parameterTypes) {
+        Object[] typedFields = new Object[fields.length];
 
         for (int i = 0; i < fields.length; i++) {
             if (parameterTypes[i] == String.class) {
-                params[i] = fields[i];
+            	typedFields[i] = fields[i];
             } else if (parameterTypes[i] == Integer.class) {
-                params[i] = Integer.parseInt(fields[i]);
+            	typedFields[i] = Integer.parseInt(fields[i]);
             } else if (parameterTypes[i] == LocalDate.class) {
-                params[i] = LocalDate.parse(fields[i]);
+            	typedFields[i] = LocalDate.parse(fields[i]);
             }
         }
-        return params;
+        return typedFields;
     }
 }
