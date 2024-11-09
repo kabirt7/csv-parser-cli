@@ -62,3 +62,42 @@ private Object[] convertFields(String[] fields, Class<?>[] parameterTypes) {
     }
 ```
 * I’ve also gone ahead and added my first test for the CSVParser. The test class creates a sample CSV including an invalid entry which is then subsequently tested (more to come)…
+
+## 9/11/24
+Planning:
+* I'm going to finish the App and Record Classes
+* Record needs the sorter method as well as the Comparator class
+* Make it so that the App requires a file directory as a command-line argument
+
+Achieved:
+* Record has new classes/methods:
+```
+public static class RecordCompare implements Comparator<Record> {
+        
+    public int compare(Record r1, Record r2) {
+      int divisionCompare = Integer.compare(r1.getDivision(), r2.getDivision());
+            
+      if (divisionCompare == 0) {
+        return Integer.compare(r2.getPoints(), r1.getPoints());  
+      }
+            
+      return divisionCompare;
+    }
+}
+```
+```
+public static List<Record> getTopThreePeople(List<Record> people) {
+        return people.stream()
+                     .sorted(new RecordCompare())  
+                     .limit(3)                        
+                     .collect(Collectors.toList());
+ }
+```
+* Added in requirement for arg passed in to App
+```
+if (args.length == 0) {
+          System.err.println("enter the file path as a command-line argument.");
+          return;
+      }
+String filePath = args[0];
+```
