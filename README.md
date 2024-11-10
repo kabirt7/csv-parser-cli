@@ -116,5 +116,5 @@ String filePath = args[0];
 * MVP achieved
 
 ## 10/11/24
-* added more tests
-* fleshed out README including build info
+* added more tests: testParseFile_InvalidData, testRecordSort_ThreeReturned and testRecordSort_CorrectSorting
+* fleshed out README to include build info
