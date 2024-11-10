@@ -40,7 +40,7 @@ Planning:
 
 Achieved:
 * I’ve fleshed out my CSVParser (and test) class as well and my Record Class
-* To allow for my CSVParser class to be used generically, I needed to pass in a constructor from the Object (in the List) that’s being returned (in this case Record)
+* To allow for my CSVParser class to be used generically, I needed to pass in a constructor from the Object (in the List) that’s being returned (in this case Person/Record)
 ```
 public <T> List<T> parseFile(String pathToFile, Constructor<T> constructor){...}
 ```
