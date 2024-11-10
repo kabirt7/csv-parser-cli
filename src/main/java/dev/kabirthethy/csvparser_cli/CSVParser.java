@@ -19,7 +19,7 @@ public class CSVParser {
 		
 		try (BufferedReader bfr = new BufferedReader(new FileReader(pathToFile))) {
 			
-			// skip first row with the CSV fields, then import the rows one-by-one
+			// Skip first row with the CSV fields, then import the rows one-by-one
 			String line;
 			bfr.readLine();
 			int lineNumber = 0;
@@ -43,16 +43,16 @@ public class CSVParser {
 			
 		};	
 		return records;
-	 }
+   }
 	
-	private Object[] typeFields(String[] fields, Class<?>[] parameterTypes) {
+   private Object[] typeFields(String[] fields, Class<?>[] parameterTypes) {
         Object[] typedFields = new Object[fields.length];
 
         for (int i = 0; i < fields.length; i++) {
             if (parameterTypes[i] == String.class) {
             	String value = fields[i];
             	
-            	// remove any unnecessary ""
+            	// Remove any unnecessary ""
             	if (value.startsWith("\"") && value.endsWith("\"")) {
                     value = value.substring(1, value.length() - 1);
                 }
@@ -63,7 +63,7 @@ public class CSVParser {
             } else if (parameterTypes[i] == LocalDate.class) {
             	typedFields[i] = LocalDate.parse(fields[i]);
             }
-        }
+       }
         return typedFields;
-    }
+  }
 }

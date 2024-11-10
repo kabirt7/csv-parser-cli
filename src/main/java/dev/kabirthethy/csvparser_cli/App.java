@@ -16,7 +16,7 @@ public class App {
       }
 	  String filePath = args[0];
 	  
-	  // parse the CSV file into Record objects
+	  // Parse the CSV file into Record objects
       Constructor<Record> recordConstructor = Record.getConstructor();
 	  List<Record> records = csvParser.parseFile(filePath, recordConstructor);
 	  
@@ -31,5 +31,5 @@ public class App {
               System.out.println(person.toYAMLFormat());
           }
       }
-  }
+      }
 }
