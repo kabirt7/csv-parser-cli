@@ -18,6 +18,8 @@ public class CSVParser {
 		List<T> records = new ArrayList<>();
 		
 		try (BufferedReader bfr = new BufferedReader(new FileReader(pathToFile))) {
+			
+			// skip first row with the CSV fields, then import the rows one-by-one
 			String line;
 			bfr.readLine();
 			int lineNumber = 0;

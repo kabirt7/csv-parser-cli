@@ -54,6 +54,7 @@ public class Record {
 	    );
 	}
 	
+	// necessary for parseFile method
 	public static Constructor<Record> getConstructor() {
         try {
             return Record.class.getConstructor(
@@ -63,13 +64,7 @@ public class Record {
         }
     }
 	
-	public static List<Record> getTopThreePeople(List<Record> people) {
-        return people.stream()
-                     .sorted(new RecordCompare())  
-                     .limit(3)                        
-                     .collect(Collectors.toList());
-    }
-	
+	// necessary for Sorting the top 3 Records
     public static class RecordCompare implements Comparator<Record> {
         
     @Override
@@ -82,5 +77,12 @@ public class Record {
             
       return divisionCompare;
     }
+    }
+    
+	public static List<Record> getTopThreePeople(List<Record> people) {
+        return people.stream()
+                     .sorted(new RecordCompare())  
+                     .limit(3)                        
+                     .collect(Collectors.toList());
     }
 }

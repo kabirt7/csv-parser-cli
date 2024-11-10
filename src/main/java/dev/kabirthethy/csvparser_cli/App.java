@@ -14,8 +14,9 @@ public class App {
           System.err.println("Enter the file path as a command-line argument");
           return;
       }
-	  
 	  String filePath = args[0];
+	  
+	  // parse the CSV file into Record objects
       Constructor<Record> recordConstructor = Record.getConstructor();
 	  List<Record> records = csvParser.parseFile(filePath, recordConstructor);
 	  
