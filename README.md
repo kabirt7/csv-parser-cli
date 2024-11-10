@@ -41,7 +41,7 @@ Initialised git repository and planned out structure of the Java project:
 - A Test source directory that contains a package with tests
 
 ## 8/11/24
-* So I've been reflecting on my initial thoughts, and I want to use generics so that any object (not just the Person object) can be analysed from the CSV Parser i.e.
+* So I've been reflecting on my initial thoughts, and I want to use generics so that any object (not just the specified Record class) can be analysed from the CSV Parser i.e.
 ```java
 CSVParser<T>
 ```
