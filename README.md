@@ -1,14 +1,24 @@
 # csv-parser-cli
 
-## MVP
+## Build
+* import the Maven project
+* enter the file path in CLI to run the program
+```
+src/main/java/resources/records.csv
+```
 
+## MVP
 * takes in a CSV file
 * sorts the records by `division` and `points`
 * selects the top three records
 * prints the records to stdout in a specific YAML format
 
-## Considerations
+## Features
+* parses CSV file
+* sorts the records by `division` and `points`, selects top three records and prints the records in the specified YAML format
+* can work with different Record Classes as long as the Record Class has the correct methods
 
+## Considerations
 * Code style and commenting
 * Unit Tests
 * Overall design and architecture
@@ -17,8 +27,10 @@
 * Logging and error reporting
 * Ease of build and deployment
 
-## Log
+## Improvements
+* To improve with the App's usability with different CSV fields, it would be better to make an Interface containing the sort and compare methods for the new Record Class (so this doesn't have to be added manually)
 
+## Log
 ## 7/11/24
 Initialised git repository and planned out structure of the Java project:
 - Person Class to contain information for each entry
@@ -104,6 +116,5 @@ String filePath = args[0];
 * MVP achieved
 
 ## 10/11/24
-Planning:
-* add more tests
-* flesh out README 
+* added more tests
+* fleshed out README including build info
