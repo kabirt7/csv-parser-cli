@@ -14,8 +14,7 @@ src/main/java/resources/records.csv
 * prints the records to stdout in a specific YAML format
 
 ## Features
-* parses CSV file
-* sorts the records by `division` and `points`, selects top three records and prints the records in the specified YAML format
+* parses CSV file, sorts the records by `division` and `points`, selects top three records and prints the records in the specified YAML format
 * can work with different Record Classes as long as the Record Class has the correct methods
 
 ## Considerations
