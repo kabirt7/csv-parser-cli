@@ -27,7 +27,7 @@ src/main/java/resources/records.csv
 * Ease of build and deployment
 
 ## Improvements
-* To improve with the App's usability with different CSV fields, it would be better to make an Interface containing the sort and compare methods for the new Record Class (so this doesn't have to be added manually)
+* To improve with the App's usability with new Record classes, it would be better to make an Interface containing the sort and compare methods for the Record Classes to extend (so this doesn't have to be added manually each time a Record Class is created)
 
 ## Log
 ## 7/11/24
