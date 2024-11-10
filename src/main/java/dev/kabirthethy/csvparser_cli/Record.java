@@ -48,6 +48,12 @@ public class Record {
 		return summary;
 	}
 	
+	public String toYAMLFormat() {
+	    return String.format(
+	      "- name: %s %s\n\n" + "details: In division %d from %s performing %s\n", firstName, lastName, division, date, summary
+	    );
+	}
+	
 	public static Constructor<Record> getConstructor() {
         try {
             return Record.class.getConstructor(
@@ -56,12 +62,6 @@ public class Record {
             throw new RuntimeException("Required constructor not found", e);
         }
     }
-	
-	public String toYAMLFormat() {
-	    return String.format(
-	      "- name: %s %s\n\n" + "details: In division %d from %s performing %s\n", firstName, lastName, division, date, summary
-	    );
-	}
 	
 	public static List<Record> getTopThreePeople(List<Record> people) {
         return people.stream()

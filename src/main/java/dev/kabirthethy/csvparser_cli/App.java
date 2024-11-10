@@ -11,7 +11,7 @@ public class App {
 	  final CSVParser csvParser = new CSVParser();
 	  
 	  if (args.length == 0) {
-          System.err.println("enter the file path as a command-line argument.");
+          System.err.println("Enter the file path as a command-line argument");
           return;
       }
 	  
