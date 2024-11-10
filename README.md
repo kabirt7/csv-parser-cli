@@ -101,3 +101,9 @@ if (args.length == 0) {
       }
 String filePath = args[0];
 ```
+* MVP achieved
+
+## 10/11/24
+Planning:
+* add more tests
+* flesh out README 
