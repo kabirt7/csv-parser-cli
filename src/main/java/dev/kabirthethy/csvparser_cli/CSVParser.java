@@ -48,7 +48,14 @@ public class CSVParser {
 
         for (int i = 0; i < fields.length; i++) {
             if (parameterTypes[i] == String.class) {
-            	typedFields[i] = fields[i];
+            	String value = fields[i];
+            	
+            	// remove any unnecessary ""
+            	if (value.startsWith("\"") && value.endsWith("\"")) {
+                    value = value.substring(1, value.length() - 1);
+                }
+            	
+            	typedFields[i] = value;
             } else if (parameterTypes[i] == Integer.class) {
             	typedFields[i] = Integer.parseInt(fields[i]);
             } else if (parameterTypes[i] == LocalDate.class) {
