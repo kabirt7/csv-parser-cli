@@ -2,7 +2,7 @@
 
 ## Build
 * import the Maven project
-* enter the file path in CLI to run the program
+* enter the file path in the CLI to run the program
 ```
 src/main/java/resources/records.csv
 ```
