@@ -54,7 +54,7 @@ public class Record {
 	    );
 	}
 	
-	// necessary for parseFile method
+	// Necessary for parseFile method
 	public static Constructor<Record> getConstructor() {
         try {
             return Record.class.getConstructor(
@@ -64,7 +64,7 @@ public class Record {
         }
     }
 	
-	// necessary for Sorting the top 3 Records
+	// Necessary for Sorting the top 3 Records
     public static class RecordCompare implements Comparator<Record> {
         
     @Override
