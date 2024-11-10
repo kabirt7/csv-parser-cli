@@ -129,5 +129,5 @@ if (parameterTypes[i] == String.class) {
                 }
             	
             	typedFields[i] = value;
-            }
+}
 ```
