@@ -118,3 +118,16 @@ String filePath = args[0];
 ## 10/11/24
 * added more tests: testParseFile_InvalidData, testRecordSort_ThreeReturned and testRecordSort_CorrectSorting
 * fleshed out README to include build info
+* Added an update to the typeFields method to remove the "" from the summary field in the CSV input:
+```
+if (parameterTypes[i] == String.class) {
+            	String value = fields[i];
+            	
+            	// remove any unnecessary ""
+            	if (value.startsWith("\"") && value.endsWith("\"")) {
+                    value = value.substring(1, value.length() - 1);
+                }
+            	
+            	typedFields[i] = value;
+            }
+```
